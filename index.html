@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos Clínicos - Semiología</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ESTÉTICA GENERAL --- */
+        body { background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
+        .reveal { font-family: 'Lato', sans-serif; color: #34495e; }
+        
+        /* Tipografía Ajustada */
+        .reveal h1, .reveal h2, .reveal h3 { font-family: 'Poppins', sans-serif; text-transform: none; color: #2c3e50; }
+        .reveal h2 { font-size: 1.4em; color: #2980b9; border-bottom: 2px solid #3498db; display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
+        .reveal p, .reveal li { font-size: 0.85em; line-height: 1.4; }
+        .reveal ul { margin-left: 1em; display: block; }
+        
+        /* Tarjetas Compactas */
+        .card { background: white; padding: 15px 20px; border-radius: 10px; box-shadow: 0 5px 10px rgba(0,0,0,0.08); text-align: left; margin-bottom: 10px; }
+        
+        /* Slide de Pregunta */
+        .question-box { border: 3px dashed #f1c40f; padding: 30px; border-radius: 15px; background: #fffbef; color: #d35400; font-size: 1.2em; font-weight: bold; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.15); text-align: center; margin-top: 20px; }
+
+        /* Layouts */
+        .side-by-side { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; height: 480px; }
+        .left-col { flex: 1; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+        .right-col { flex: 1.3; display: flex; align-items: center; justify-content: center; background: white; padding: 5px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); height: 450px; position: relative; }
+        
+        .img-full { max-height: 100%; max-width: 100%; object-fit: contain; }
+
+        .columns { display: flex; gap: 15px; }
+        .column { flex: 1; }
+
+        /* Utilidades */
+        .important { color: #c0392b; font-weight: bold; }
+        .success { color: #27ae60; font-weight: bold; }
+        .highlight-box { background-color: #eaf2f8; border-left: 5px solid #3498db; padding: 10px 15px; border-radius: 4px; margin-top: 10px; font-size: 0.8em; }
+        .caption-card { background: #34495e; color: white; padding: 10px; border-radius: 6px; font-size: 0.75em; text-align: left; box-shadow: 0 3px 5px rgba(0,0,0,0.2); border-left: 3px solid #f1c40f; margin-top: 5px; }
+
+        /* Tablas Compactas */
+        .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.7em; background: white; box-shadow: 0 3px 5px rgba(0,0,0,0.05); }
+        .comparison-table th { background-color: #2c3e50; color: white; padding: 8px; }
+        .comparison-table td { border-bottom: 1px solid #ecf0f1; padding: 8px; vertical-align: top; }
+        
+        /* Matriz Forrester */
+        .matrix-container { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px; margin-top: 10px; }
+        .matrix-box { padding: 10px; border: 2px solid #bdc3c7; border-radius: 8px; text-align: center; background: #ecf0f1; color: #7f8c8d; font-size: 0.7em; }
+        .matrix-label { font-weight: bold; display: block; font-size: 1.2em; margin-bottom: 3px; }
+        .matrix-box.selected { background-color: #fadbd8; border-color: #c0392b; color: #c0392b; box-shadow: 0 5px 10px rgba(192, 57, 43, 0.1); }
+
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section data-background-color="#2c3e50">
+            <h1 style="color:white;">Semiología Clínica</h1>
+            <h3 style="color:#3498db;">Integración de Casos Clínicos</h3>
+            <p style="color:#bdc3c7; margin-top:50px; font-size: 1.2em;">Hospital Naval</p>
+            <p style="color:#ecf0f1;">Oscar Luna Davila</p>
+            <div style="font-size: 0.7em; color: #95a5a6; margin-top: 30px;">
+                (Desliza para comenzar)
+            </div>
+        </section>
+
+        <section>
+            <section>
+                <h2>Caso 1: El Paciente Disneico</h2>
+                <div class="card">
+                    <ul>
+                        <li><strong>Paciente:</strong> Varón de 68 años.</li>
+                        <li><strong>Antecedentes:</strong> HTA mal controlada, Infarto previo.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Motivo de Consulta</h3>
+                    <p>Disnea progresiva (2 semanas). Comenzó a grandes esfuerzos, ahora a mínimos. Refiere <strong>Ortopnea</strong> (3 almohadas) y <strong>Disnea Paroxística Nocturna</strong>.</p>
+                </div>
+            </section>
+
+            <section data-background-color="#fcf3cf">
+                <div class="question-box">
+                    <p>"Basados en la anamnesis (Ortopnea/DPN), ¿qué signos específicos buscarían en el examen físico?"</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Examen Físico</h2>
+                <div class="columns">
+                    <div class="column card">
+                        <h4 style="color:#e67e22; font-size:0.9em;">Signos Vitales</h4>
+                        <ul style="font-size:0.85em;">
+                            <li>TA: 150/90 mmHg</li>
+                            <li>FC: 105 lpm</li>
+                            <li>SatO2: 91% (AA)</li>
+                        </ul>
+                    </div>
+                    <div class="column card">
+                        <h4 style="color:#2980b9; font-size:0.9em;">Hallazgos Positivos</h4>
+                        <ul style="font-size:0.85em;">
+                            <li><strong>Cuello:</strong> Ingurgitación yugular 2/3.</li>
+                            <li><strong>Tórax:</strong> R3 (Galope).</li>
+                            <li><strong>Pulmones:</strong> Rales crepitantes bibasales.</li>
+                            <li><strong>Miembros:</strong> Edema Godet ++.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Diagnóstico Clínico</h2>
+                <div class="card">
+                    <h3 style="font-size:0.9em;">Criterios de Framingham</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th width="50%">Criterios MAYORES</th>
+                                <th width="50%">Criterios MENORES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    • DPN / Ortopnea<br>
+                                    • Ingurgitación Yugular<br>
+                                    • Rales Crepitantes<br>
+                                    • Cardiomegalia (Rx)<br>
+                                    • Tercer Ruido (R3)<br>
+                                    • Reflujo Hepato-yugular
+                                </td>
+                                <td>
+                                    • Edema de miembros<br>
+                                    • Tos nocturna<br>
+                                    • Disnea de esfuerzo<br>
+                                    • Hepatomegalia<br>
+                                    • Derrame pleural<br>
+                                    • Taquicardia (>120)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box" style="text-align:center;">
+                        <strong>Dx:</strong> 2 Mayores O 1 Mayor + 2 Menores.
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Electrocardiograma</h2>
+                <div class="card" style="height: 400px; display:flex; justify-content:center; padding:5px;">
+                    <img src="ecg_bcri.jpg" style="max-height:100%; width:auto;" alt="ECG BCRI">
+                </div>
+                <div class="fragment highlight-box" style="margin-top:0;">
+                    <strong>Hallazgo:</strong> Ritmo Sinusal con QRS Ancho (>120ms) y morfología de Bloqueo Completo de Rama Izquierda (BCRI).
+                </div>
+            </section>
+
+            <section>
+                <h2>Criterios de Calidad Rx</h2>
+                <div class="card">
+                    <h3>¿Cuándo es técnicamente aceptable?</h3>
+                    <ul style="font-size:0.9em;">
+                        <li><strong>Penetración:</strong> Ver la columna a través del corazón (T4).</li>
+                        <li><strong>Inspiración:</strong> Contar hasta el 10º arco costal posterior.</li>
+                        <li><strong>Rotación:</strong> Clavículas equidistantes a las apófisis espinosas.</li>
+                        <li><strong>Angulación:</strong> Extremos internos de las clavículas a nivel de la 3ª costilla.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Radiografía de Tórax</h2>
+                <div class="side-by-side">
+                    <div class="right-col" style="background:black;">
+                        <img src="rx_ic.png" class="img-full" alt="Rx Cardiomegalia">
+                    </div>
+                    <div class="left-col">
+                        <div class="fragment caption-card">
+                            <span style="color:#f1c40f;">↑</span> <strong>Cardiomegalia:</strong><br>ICT > 0.5.
+                        </div>
+                        <div class="fragment caption-card">
+                            <span style="color:#f1c40f;">↗</span> <strong>Redistribución:</strong><br>Flujo hacia vértices.
+                        </div>
+                        <div class="fragment caption-card">
+                            <span style="color:#f1c40f;">↘</span> <strong>Derrame:</strong><br>Velamiento seno costofrénico.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Integración: Perfil Hemodinámico</h2>
+                <div class="matrix-container">
+                    <div class="matrix-box">
+                        <span class="matrix-label">Perfil A</span>
+                        Caliente y Seco<br>(Compensado)
+                    </div>
+                    <div class="matrix-box selected">
+                        <span class="matrix-label">Perfil B</span>
+                        Caliente y Húmedo<br>(Congestivo)
+                        <br><strong style="color:#c0392b;">★ PACIENTE</strong>
+                    </div>
+                    <div class="matrix-box">
+                        <span class="matrix-label">Perfil L</span>
+                        Frío y Seco<br>(Hipoperfusión)
+                    </div>
+                    <div class="matrix-box">
+                        <span class="matrix-label">Perfil C</span>
+                        Frío y Húmedo<br>(Shock)
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Caso 2: Dolor Torácico</h2>
+                <div class="card">
+                    <ul>
+                        <li><strong>Paciente:</strong> Mujer, 55 años.</li>
+                        <li><strong>Factores de Riesgo:</strong> Tabaquista, Diabética.</li>
+                        <li><strong>Motivo:</strong> Dolor precordial opresivo (40 min) con irradiación a brazo.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Semiología: Presentación Atípica</h2>
+                <div class="card">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Clínica Clásica (Hombres)</th>
+                                <th>Atípica (Mujer/DBT)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dolor Precordial Opresivo</td>
+                                <td>Disnea ("Angina equiv.")</td>
+                            </tr>
+                            <tr>
+                                <td>Irradiación brazo izq.</td>
+                                <td>Dolor epigástrico/dorso</td>
+                            </tr>
+                            <tr>
+                                <td>Diaforesis profusa</td>
+                                <td>Fatiga extrema / Náuseas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size:0.8em; text-align:center; margin-top:10px;"><em>¡Atención! La ausencia de dolor clásico NO descarta IAM.</em></p>
+            </section>
+
+            <section>
+                <h2>Examen Físico</h2>
+                <div class="columns">
+                    <div class="column card">
+                        <h4>Inspección</h4>
+                        <p>Pálida y sudorosa (Descarga adrenérgica).</p>
+                    </div>
+                    <div class="column card">
+                        <h4>Auscultación</h4>
+                        <p>Ruidos normales. Sin soplos.</p>
+                    </div>
+                </div>
+                <div class="highlight-box important">
+                    <strong>Alerta:</strong> El examen físico suele ser NORMAL en IAM no complicado.
+                </div>
+            </section>
+
+            <section data-background-color="#fcf3cf">
+                <div class="question-box">
+                    <p>"Llega a la guardia. Tienen 10 minutos. ¿Qué estudio es prioritario e indiscutible?"</p>
+                    <div class="fragment highlight-box important" style="background:white; border:none; margin-top:20px; color:#c0392b;">
+                        ELECTROCARDIOGRAMA
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Electrocardiograma</h2>
+                <div class="card" style="height: 380px; display:flex; justify-content:center; padding:5px;">
+                    <img src="ecg_iam.jpg" style="max-height:100%; width:auto;" alt="IAMCEST Cara Anterior">
+                </div>
+                <div class="fragment caption-card" style="margin-top:5px;">
+                    <strong>Diagnóstico:</strong> Supradesnivel ST V1-V4 (IAMCEST Anterior).
+                </div>
+            </section>
+
+            <section>
+                <h2>Estudios Complementarios en SCA</h2>
+                <div class="card">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th style="background:#c0392b; color:white;">SCACEST (Con Elevación)</th>
+                                <th>SCASEST (Sin Elevación)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fisiopatología</strong></td>
+                                <td>Oclusión Total</td>
+                                <td>Oclusión Parcial</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ECG</strong></td>
+                                <td>Supra ST (Bandera)</td>
+                                <td>Infra ST / T Invertida / Normal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Troponinas</strong></td>
+                                <td>Elevadas (Pero NO SE ESPERAN)</td>
+                                <td>Elevadas (Confirman Dx)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Diagnósticos Diferenciales (Dolor Torácico)</h2>
+                <div class="card">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Patología</th>
+                                <th>Dolor Característico</th>
+                                <th>Hallazgo Clave</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>IAM</strong></td>
+                                <td>Opresivo, irradiado</td>
+                                <td>ECG / Troponina</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Disección Aórtica</strong></td>
+                                <td>Transfixiante, migratorio</td>
+                                <td>Asimetría Pulsos / TA</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TEP</strong></td>
+                                <td>Pleurítico + Disnea</td>
+                                <td>Taquicardia / Hipoxemia</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Taponamiento</strong></td>
+                                <td>Sordo / Opresivo</td>
+                                <td>Ruidos alejados / IY / Hipotensión</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Caso 3: Déficit Neurológico</h2>
+                <div class="card">
+                    <ul>
+                        <li><strong>Paciente:</strong> Varón 72 años.</li>
+                        <li><strong>Antecedente:</strong> Fibrilación Auricular (FA) no anticoagulada.</li>
+                        <li><strong>Motivo:</strong> "Déficit Agudo" (45 min). Afasia y debilidad derecha.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-background-color="#fcf3cf">
+                <div class="question-box">
+                    <p>Bed-side:</p>
+                    <p>"Antes de llevarlo al tomógrafo... ¿Qué patología metabólica descartan?"</p>
+                    <div class="fragment highlight-box success" style="margin-top:20px; background:white; border:none;">
+                        HIPOGLUCEMIA (HGT)
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Examen Neurológico</h2>
+                <div class="card">
+                    <h3>¿Qué buscar para objetivar el déficit?</h3>
+                    <ul style="font-size:0.85em;">
+                        <li><strong>Pares Craneales:</strong> Paresia facial central (respeta frente).</li>
+                        <li><strong>Motilidad:</strong> Claudicación de miembro superior/inferior (Mingazzini). Babinski (+).</li>
+                        <li><strong>Lenguaje:</strong> Afasia de Broca (Motor/Expresión).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Clínica según Territorio Vascular</h2>
+                <div class="card">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Arteria</th>
+                                <th>Déficit Característico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cerebral Media (ACM)</strong></td>
+                                <td>Facio-Braquial > Crural. Afasia (si es Dominante).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cerebral Anterior (ACA)</strong></td>
+                                <td>Crural > Braquial. Cambios conductuales (Frontal).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cerebral Posterior (ACP)</strong></td>
+                                <td>Hemianopsia Homónima. Alexia sin agrafia.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vertebro-Basilar</strong></td>
+                                <td>Vértigo, Ataxia, Diplopía, Disfagia (Tronco/Cerebelo).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Tomografía de Cerebro</h2>
+                <div class="side-by-side">
+                    <div class="right-col" style="background:black;">
+                        <img src="tc_acv.jpg" class="img-full" alt="TC Cerebro ACV">
+                    </div>
+                    <div class="left-col">
+                        <div class="fragment caption-card">
+                            <strong>1. ¿Hay Sangre?</strong><br>NO. Ausencia de Hiperdensidad (blanco). <span class="success">Descarta Hemorragia.</span>
+                        </div>
+                        <div class="fragment caption-card">
+                            <strong>2. Signos Precoces:</strong><br>Hipodensidad (oscuro) en hemisferio izquierdo.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Caso 4</h2>
+                <div class="card">
+                    <ul>
+                        <li><strong>Paciente:</strong> 25 años, sano.</li>
+                        <li><strong>Clínica:</strong> Fiebre alta, tos herrumbrosa, puntada de costado.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-background-color="#fcf3cf">
+                <div class="question-box">
+                    <p>"¿Qué triada clásica (Palpación, Percusión, Auscultación) confirma el Síndrome de Condensación?"</p>
+                    <div class="fragment highlight-box" style="margin-top:20px; background:white; border:none;">
+                        VV Aumentadas + Matidez + Soplo Tubario
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Síndrome de Condensación</h2>
+                <div class="card">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th width="30%">Maniobra</th>
+                                <th>Hallazgo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Palpación</strong></td>
+                                <td class="important">Vibraciones Vocales AUMENTADAS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Percusión</strong></td>
+                                <td class="important">MATIDEZ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Auscultación</strong></td>
+                                <td>Soplo Tubario / Crepitantes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Condensación vs Derrame</h2>
+                <div class="card">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Signo</th>
+                                <th>Condensación</th>
+                                <th>Derrame Pleural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Vibraciones Vocales</strong></td>
+                                <td class="important">AUMENTADAS</td>
+                                <td style="color:#3498db;">ABOLIDAS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Percusión</strong></td>
+                                <td class="important">MATIDEZ</td>
+                                <td>MATIDEZ HÍDRICA</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Auscultación</strong></td>
+                                <td>Soplo Tubario</td>
+                                <td>Silencio Auscultatorio</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Radiografía de Tórax</h2>
+                <div class="side-by-side">
+                    <div class="right-col" style="background:black;">
+                        <img src="rx_neumonia.jpg" class="img-full" alt="Neumonía Lobar">
+                    </div>
+                    <div class="left-col">
+                        <div class="fragment caption-card">
+                            <span style="color:#f1c40f;">●</span> <strong>Condensación:</strong><br>Opacidad blanca homogénea lobar.
+                        </div>
+                        <div class="fragment caption-card">
+                            <span style="color:#f1c40f;">⑂</span> <strong>Broncograma:</strong><br>Líneas negras de aire (Signo alveolar).
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Caso 5</h2>
+                <div class="card">
+                    <ul>
+                        <li><strong>Paciente:</strong> Mujer 45 años, sobrepeso.</li>
+                        <li><strong>Motivo:</strong> "Estoy amarilla" tras comer grasas.</li>
+                        <li><strong>Signos Clave:</strong> Coluria (orina oscura) y Acolia (heces pálidas).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Examen y Laboratorio</h2>
+                <div class="columns">
+                    <div class="column card">
+                        <h4>Físico</h4>
+                        <ul>
+                            <li>Ictericia piel/mucosas.</li>
+                            <li><strong>Murphy (+):</strong> Dolor vesicular.</li>
+                        </ul>
+                    </div>
+                    <div class="column card">
+                        <h4>Estudios</h4>
+                        <ul>
+                            <li>Bilirrubina Directa ↑.</li>
+                            <li>FAL y GGT ↑↑ (Patrón Obstructivo).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Estudios Complementarios</h2>
+                <div class="side-by-side">
+                    <div class="left-col">
+                        <div class="caption-card">
+                            <strong>Clínica:</strong><br>Ictericia conjuntival franca.
+                        </div>
+                        <div class="caption-card">
+                            <strong>Ecografía:</strong><br>Litiasis (piedra) con sombra acústica.
+                        </div>
+                    </div>
+                    <div class="right-col" style="background:black; flex-direction:column; padding:0;">
+                        <div style="flex:1; width:100%; overflow:hidden;">
+                            <img src="ojo_ictericia.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Ictericia">
+                        </div>
+                        <div style="flex:1; width:100%; overflow:hidden;">
+                            <img src="eco_litiasis.jpg" style="width:100%; height:100%; object-fit:contain;" alt="Eco">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Clasificación Semiológica</h2>
+                <div class="card">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Clínica Clave</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Pre-Hepática</strong> (Hemólisis)</td>
+                                <td>Orina clara, Anemia.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hepática</strong> (Hepatitis)</td>
+                                <td>Transaminasas ↑↑.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Post-Hepática</strong> (Obstrucción)</td>
+                                <td><strong>Coluria + Acolia</strong>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Caso 6: Síndrome Asténico</h2>
+                <div class="card">
+                    <ul>
+                        <li><strong>Paciente:</strong> Mujer, 32 años (Vegetariana, Hipermenorrea).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Motivo de Consulta</h3>
+                    <ul>
+                        <li><strong>Generales:</strong> Astenia, fatiga, disnea de esfuerzo.</li>
+                        <li><strong>Neuro:</strong> Cefalea, irritabilidad, falta de concentración.</li>
+                        <li><strong>Piel/Faneras:</strong> Caída cabello, uñas frágiles, Pica (hielo).</li>
+                    </ul>
+                </div>
+                <p style="font-size:0.7em; text-align:center;"><em>*En hombres o mujeres post-menopáusicas, SIEMPRE descartar sangrado digestivo.</em></p>
+            </section>
+
+            <section>
+                <h2>Laboratorio: Hemograma</h2>
+                <div class="card">
+                    <ul>
+                        <li style="margin-bottom:10px;"><strong>Hemoglobina:</strong> 9.5 g/dL <span class="fragment important" style="font-size:0.8em;">(Baja)</span></li>
+                        <li style="margin-bottom:10px;"><strong>VCM:</strong> 72 fL <span class="fragment important" style="font-size:0.8em;">(Microcítica)</span></li>
+                        <li style="margin-bottom:10px;"><strong>HCM:</strong> 25 pg <span class="fragment important" style="font-size:0.8em;">(Hipocrómica)</span></li>
+                        <li><strong>Ferritina:</strong> <span class="fragment important" style="font-size:0.8em;">Baja</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Frotis de Sangre</h2>
+                <div class="side-by-side">
+                    <div class="right-col" style="background:white;">
+                        <img src="frotis_anemia.jpg" class="img-full" alt="Frotis">
+                    </div>
+                    <div class="left-col">
+                        <div class="fragment caption-card">
+                            <span style="color:#f1c40f;">●</span> <strong>Hipocromía:</strong><br>Centro blanco grande (falta Hb).
+                        </div>
+                        <div class="fragment caption-card">
+                            <span style="color:#f1c40f;">●</span> <strong>Microcitosis:</strong><br>Células pequeñas.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Clasificación (VCM)</h2>
+                <div class="card">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>VCM</th>
+                                <th>Tipo</th>
+                                <th>Causa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Bajo (< 80)</strong></td>
+                                <td class="important">Microcítica</td>
+                                <td>Falta de Hierro.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Normal</strong></td>
+                                <td>Normocítica</td>
+                                <td>Enf. Crónica / Sangrado.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alto (> 100)</strong></td>
+                                <td>Macrocítica</td>
+                                <td>Déficit B12/Fólico.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Caso 7: "El Gymbro Roto"</h2>
+                <div class="card">
+                    <ul>
+                        <li><strong>Paciente:</strong> Varón, 28 años.</li>
+                        <li><strong>Contexto:</strong> Clase intensa de Crossfit tras 6 meses de inactividad.</li>
+                        <li><strong>Motivo:</strong> Dolor muscular extremo ("No me puedo mover") y orina oscura.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-background-color="#fcf3cf">
+                <div class="question-box">
+                    <p>El Color de la Orina:</p>
+                    <p>"Si la tira reactiva da positivo para 'sangre' (++), pero en el microscopio NO se ven glóbulos rojos... ¿Qué es?"</p>
+                    <div class="fragment highlight-box success" style="background:white; border:none; margin-top:20px;">
+                        MIOGLOBINURIA
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Examen Físico</h2>
+                <div class="card">
+                    <h4>Inspección y Palpación</h4>
+                    <ul>
+                        <li><strong>Muscular:</strong> Dolor intenso en cuádriceps y deltoides.</li>
+                        <li><strong>Signo de Alarma:</strong> Tensión excesiva (Descartar Síndrome Compartimental).</li>
+                        <li><strong>Orina:</strong> Color "Coca-Cola" (Oscura).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Estudios Complementarios: Lab</h2>
+                <div class="side-by-side">
+                    <div class="left-col">
+                        <div class="card">
+                            <h4>Química Clínica</h4>
+                            <ul style="font-size:0.9em;">
+                                <li><strong>CPK (CK):</strong> 25.000 U/L.</li>
+                                <li class="fragment important" style="list-style:none; font-size:0.8em;">(VN < 200) ¡Altísima!</li>
+                                <li><strong>Potasio (K+):</strong> 5.8 mEq/L (Riesgo).</li>
+                                <li><strong>Creatinina:</strong> En ascenso (IRA).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right-col" style="background:white; flex:0.8;">
+                        <img src="orina_rabdo.jpg" class="img-full" style="border-radius:10px;" alt="Orina">
+                    </div>
+                </div>
+                <div class="highlight-box fragment" style="font-size:0.8em; margin-top:5px;">
+                    <strong>Fisiopatología:</strong> Ruptura muscular &rarr; Mioglobina + Potasio.
+                </div>
+            </section>
+
+            <section>
+                <h2>BONUS: Conducta Terapéutica</h2>
+                <div class="card">
+                    <h3>Manejo Inicial (Guías SAM)</h3>
+                    <ol>
+                        <li><strong>Hidratación Agresiva:</strong> Solución Fisiológica para "lavar" el riñón y evitar NTA.</li>
+                        <li><strong>Manejo del K+:</strong> ECG + medidas hipokalemiantes.</li>
+                        <li><strong>Objetivo:</strong> Diuresis > 200 ml/h.</li>
+                    </ol>
+                </div>
+                <div class="highlight-box important">
+                    <strong>Diagnóstico:</strong> Rabdomiólisis con Injuria Renal Aguda.
+                </div>
+            </section>
+        </section>
+
+        <section data-background-color="#2c3e50">
+            <h1 style="color:white;">¡Muchas Gracias!</h1>
+            <h3 style="color:#3498db;">¿Dudas o Preguntas?</h3>
+        </section>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+<script>
+    Reveal.initialize({
+        hash: false, 
+        plugins: [ RevealHighlight ],
+        slideNumber: 'c/t',
+        transition: 'slide',
+        backgroundTransition: 'fade'
+    });
+</script>
+</body>
+</html>
