@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casos Clínicos - Semiología</title>
+    <title>Casos Clínicos - Semiología (Versión Final)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
@@ -15,25 +15,21 @@
         body { background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
         .reveal { font-family: 'Lato', sans-serif; color: #34495e; }
         
-        /* Tipografía Ajustada */
+        /* Tipografía */
         .reveal h1, .reveal h2, .reveal h3 { font-family: 'Poppins', sans-serif; text-transform: none; color: #2c3e50; }
         .reveal h2 { font-size: 1.4em; color: #2980b9; border-bottom: 2px solid #3498db; display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
-        .reveal p, .reveal li { font-size: 0.85em; line-height: 1.4; }
+        .reveal p, .reveal li { font-size: 0.80em; line-height: 1.4; }
         .reveal ul { margin-left: 1em; display: block; }
         
-        /* Tarjetas Compactas */
+        /* Tarjetas y Cajas */
         .card { background: white; padding: 15px 20px; border-radius: 10px; box-shadow: 0 5px 10px rgba(0,0,0,0.08); text-align: left; margin-bottom: 10px; }
+        .question-box { border: 3px dashed #f1c40f; padding: 20px; border-radius: 15px; background: #fffbef; color: #d35400; font-size: 1.1em; font-weight: bold; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.15); text-align: center; margin-top: 20px; }
         
-        /* Slide de Pregunta */
-        .question-box { border: 3px dashed #f1c40f; padding: 30px; border-radius: 15px; background: #fffbef; color: #d35400; font-size: 1.2em; font-weight: bold; box-shadow: 0 5px 15px rgba(241, 196, 15, 0.15); text-align: center; margin-top: 20px; }
-
         /* Layouts */
         .side-by-side { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; height: 480px; }
         .left-col { flex: 1; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
         .right-col { flex: 1.3; display: flex; align-items: center; justify-content: center; background: white; padding: 5px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); height: 450px; position: relative; }
-        
         .img-full { max-height: 100%; max-width: 100%; object-fit: contain; }
-
         .columns { display: flex; gap: 15px; }
         .column { flex: 1; }
 
@@ -43,16 +39,35 @@
         .highlight-box { background-color: #eaf2f8; border-left: 5px solid #3498db; padding: 10px 15px; border-radius: 4px; margin-top: 10px; font-size: 0.8em; }
         .caption-card { background: #34495e; color: white; padding: 10px; border-radius: 6px; font-size: 0.75em; text-align: left; box-shadow: 0 3px 5px rgba(0,0,0,0.2); border-left: 3px solid #f1c40f; margin-top: 5px; }
 
-        /* Tablas Compactas */
-        .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.7em; background: white; box-shadow: 0 3px 5px rgba(0,0,0,0.05); }
+        /* Tablas */
+        .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.65em; background: white; box-shadow: 0 3px 5px rgba(0,0,0,0.05); }
         .comparison-table th { background-color: #2c3e50; color: white; padding: 8px; }
-        .comparison-table td { border-bottom: 1px solid #ecf0f1; padding: 8px; vertical-align: top; }
+        .comparison-table td { border-bottom: 1px solid #ecf0f1; padding: 6px; vertical-align: top; }
         
         /* Matriz Forrester */
         .matrix-container { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px; margin-top: 10px; }
         .matrix-box { padding: 10px; border: 2px solid #bdc3c7; border-radius: 8px; text-align: center; background: #ecf0f1; color: #7f8c8d; font-size: 0.7em; }
         .matrix-label { font-weight: bold; display: block; font-size: 1.2em; margin-bottom: 3px; }
         .matrix-box.selected { background-color: #fadbd8; border-color: #c0392b; color: #c0392b; box-shadow: 0 5px 10px rgba(192, 57, 43, 0.1); }
+
+        /* --- NUEVOS ESTILOS FEEDBACK --- */
+        
+        /* Badges de Dificultad */
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.5em; font-weight: bold; vertical-align: middle; margin-left: 10px; letter-spacing: 1px; text-transform: uppercase; }
+        .badge-basic { background: #27ae60; color: white; }
+        .badge-advanced { background: #c0392b; color: white; }
+
+        /* Cajas de Resumen (Perlas y Errores) */
+        .summary-container { display: flex; gap: 15px; margin-top: 10px; align-items: stretch; }
+        .pearl-box { flex: 1; background: #e8f8f5; border-left: 5px solid #1abc9c; padding: 15px; border-radius: 0 8px 8px 0; text-align: left; }
+        .error-box { flex: 1; background: #fdedec; border-left: 5px solid #e74c3c; padding: 15px; border-radius: 0 8px 8px 0; text-align: left; }
+        .box-title { display: block; font-weight: bold; margin-bottom: 8px; font-size: 0.9em; }
+        .pearl-box .box-title { color: #16a085; }
+        .error-box .box-title { color: #c0392b; }
+
+        /* Semiotecnia Tip */
+        .semiotech-tip { background: #fcf3cf; border: 1px dashed #f1c40f; padding: 10px; font-size: 0.75em; margin-top: 5px; border-radius: 5px; display: flex; align-items: center; gap: 10px; text-align: left; }
+        .semiotech-icon { font-size: 1.5em; }
 
     </style>
 </head>
@@ -112,6 +127,14 @@
                         </ul>
                     </div>
                 </div>
+                <div class="semiotech-tip fragment">
+                    <span class="semiotech-icon">💡</span>
+                    <div>
+                        <strong>Tips de Semiotecnia:</strong><br>
+                        • <strong>Ingurgitación:</strong> Paciente a 45°, luz tangencial, mirar detrás del ECM.<br>
+                        • <strong>R3:</strong> Usar la <em>campana</em> del estetoscopio, en decúbito lateral izquierdo (Pachón).
+                    </div>
+                </div>
             </section>
 
             <section>
@@ -153,8 +176,8 @@
             </section>
 
             <section>
-                <h2>Electrocardiograma</h2>
-                <div class="card" style="height: 400px; display:flex; justify-content:center; padding:5px;">
+                <h2>Electrocardiograma <span class="badge badge-basic">🟢 Básico</span></h2>
+                <div class="card" style="height: 380px; display:flex; justify-content:center; padding:5px;">
                     <img src="ecg_bcri.jpg" style="max-height:100%; width:auto;" alt="ECG BCRI">
                 </div>
                 <div class="fragment highlight-box" style="margin-top:0;">
@@ -163,7 +186,7 @@
             </section>
 
             <section>
-                <h2>Criterios de Calidad Rx</h2>
+                <h2>Criterios de Calidad Rx <span class="badge badge-basic">🟢 Básico</span></h2>
                 <div class="card">
                     <h3>¿Cuándo es técnicamente aceptable?</h3>
                     <ul style="font-size:0.9em;">
@@ -196,7 +219,7 @@
             </section>
 
             <section>
-                <h2>Integración: Perfil Hemodinámico</h2>
+                <h2>Integración: Perfil Hemodinámico <span class="badge badge-advanced">🔴 Avanzado</span></h2>
                 <div class="matrix-container">
                     <div class="matrix-box">
                         <span class="matrix-label">Perfil A</span>
@@ -214,6 +237,26 @@
                     <div class="matrix-box">
                         <span class="matrix-label">Perfil C</span>
                         Frío y Húmedo<br>(Shock)
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cierre del Caso 1</h2>
+                <div class="summary-container">
+                    <div class="pearl-box">
+                        <span class="box-title">💎 Perla Clínica</span>
+                        <ul>
+                            <li>Ortopnea + DPN son los síntomas más específicos de IC Izquierda.</li>
+                            <li>En BCRI, el corazón late desincronizado.</li>
+                        </ul>
+                    </div>
+                    <div class="error-box">
+                        <span class="box-title">☠️ Error Mortal</span>
+                        <ul>
+                            <li>Confundir edema por Amlodipina con Insuficiencia Cardíaca.</li>
+                            <li>No tratar la congestión (diuréticos) antes de intentar titular betabloqueantes.</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -287,7 +330,7 @@
             </section>
 
             <section>
-                <h2>Electrocardiograma</h2>
+                <h2>Electrocardiograma <span class="badge badge-basic">🟢 Básico</span></h2>
                 <div class="card" style="height: 380px; display:flex; justify-content:center; padding:5px;">
                     <img src="ecg_iam.jpg" style="max-height:100%; width:auto;" alt="IAMCEST Cara Anterior">
                 </div>
@@ -320,7 +363,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Troponinas</strong></td>
-                                <td>Elevadas (Pero NO SE ESPERAN)</td>
+                                <td>Elevadas (Se piden, pero <strong>NO SE ESPERAN</strong>)</td>
                                 <td>Elevadas (Confirman Dx)</td>
                             </tr>
                         </tbody>
@@ -329,39 +372,59 @@
             </section>
 
             <section>
-                <h2>Diagnósticos Diferenciales (Dolor Torácico)</h2>
+                <h2>Diagnósticos Diferenciales <span class="badge badge-advanced">🔴 Avanzado</span></h2>
                 <div class="card">
                     <table class="comparison-table">
                         <thead>
                             <tr>
                                 <th>Patología</th>
-                                <th>Dolor Característico</th>
                                 <th>Hallazgo Clave</th>
+                                <th style="color:#c0392b;">Conducta / Error Mortal</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>IAM</strong></td>
-                                <td>Opresivo, irradiado</td>
                                 <td>ECG / Troponina</td>
+                                <td>Trombolizar sin dudar en SCACEST.</td>
                             </tr>
                             <tr>
                                 <td><strong>Disección Aórtica</strong></td>
-                                <td>Transfixiante, migratorio</td>
                                 <td>Asimetría Pulsos / TA</td>
+                                <td><strong>¡NO trombolizar!</strong> Pedir TAC urgente.</td>
                             </tr>
                             <tr>
                                 <td><strong>TEP</strong></td>
-                                <td>Pleurítico + Disnea</td>
                                 <td>Taquicardia / Hipoxemia</td>
+                                <td>Sospecha alta + Dímero D negativo: el Dímero D NO sirve.</td>
                             </tr>
                             <tr>
                                 <td><strong>Taponamiento</strong></td>
-                                <td>Sordo / Opresivo</td>
                                 <td>Ruidos alejados / IY / Hipotensión</td>
+                                <td>No dar diuréticos (empeoran el llenado).</td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cierre del Caso 2</h2>
+                <div class="summary-container">
+                    <div class="pearl-box">
+                        <span class="box-title">💎 Perla Clínica</span>
+                        <ul>
+                            <li>Tiempo es músculo: El ECG manda sobre las enzimas en el SCACEST.</li>
+                            <li>Mujeres y diabéticos suelen tener clínica atípica (disnea, náuseas).</li>
+                        </ul>
+                    </div>
+                    <div class="error-box">
+                        <span class="box-title">☠️ Error Mortal</span>
+                        <ul>
+                            <li>Esperar el resultado de Troponina para tratar un Supra ST.</li>
+                            <li>Dar oxígeno si satura > 90% (vasoconstricción coronaria).</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </section>
@@ -433,7 +496,7 @@
             </section>
 
             <section>
-                <h2>Tomografía de Cerebro</h2>
+                <h2>Tomografía de Cerebro <span class="badge badge-basic">🟢 Básico</span></h2>
                 <div class="side-by-side">
                     <div class="right-col" style="background:black;">
                         <img src="tc_acv.jpg" class="img-full" alt="TC Cerebro ACV">
@@ -448,11 +511,31 @@
                     </div>
                 </div>
             </section>
+
+            <section>
+                <h2>Cierre del Caso 3</h2>
+                <div class="summary-container">
+                    <div class="pearl-box">
+                        <span class="box-title">💎 Perla Clínica</span>
+                        <ul>
+                            <li>Una TC Normal NO descarta ACV Isquémico (tarda horas en verse).</li>
+                            <li>TC sirve para descartar sangre (Hemorragia) rápido.</li>
+                        </ul>
+                    </div>
+                    <div class="error-box">
+                        <span class="box-title">☠️ Error Mortal</span>
+                        <ul>
+                            <li>Bajar la presión arterial bruscamente (daña la zona de penumbra).</li>
+                            <li>No hacer HGT (Hipoglucemia mimetiza ACV).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <section>
             <section>
-                <h2>Caso 4</h2>
+                <h2>Caso 4: Fiebre y Condensación</h2>
                 <div class="card">
                     <ul>
                         <li><strong>Paciente:</strong> 25 años, sano.</li>
@@ -499,7 +582,7 @@
             </section>
 
             <section>
-                <h2>Condensación vs Derrame</h2>
+                <h2>Condensación vs Derrame <span class="badge badge-basic">🟢 Básico</span></h2>
                 <div class="card">
                     <table class="comparison-table">
                         <thead>
@@ -546,11 +629,31 @@
                     </div>
                 </div>
             </section>
+
+            <section>
+                <h2>Cierre del Caso 4</h2>
+                <div class="summary-container">
+                    <div class="pearl-box">
+                        <span class="box-title">💎 Perla Clínica</span>
+                        <ul>
+                            <li>El sólido transmite el sonido (VV ↑), el líquido lo aísla (VV ↓).</li>
+                            <li>Soplo Tubario = Respiración laringo-traqueal transmitida a periferia.</li>
+                        </ul>
+                    </div>
+                    <div class="error-box">
+                        <span class="box-title">☠️ Error Mortal</span>
+                        <ul>
+                            <li>Confundir Derrame con Neumonía (la palpación es la clave).</li>
+                            <li>Esperar que la Rx se limpie rápido (tarda 4-6 semanas, la clínica manda).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <section>
             <section>
-                <h2>Caso 5</h2>
+                <h2>Caso 5: Ictericia</h2>
                 <div class="card">
                     <ul>
                         <li><strong>Paciente:</strong> Mujer 45 años, sobrepeso.</li>
@@ -603,7 +706,7 @@
             </section>
 
             <section>
-                <h2>Clasificación Semiológica</h2>
+                <h2>Clasificación Semiológica <span class="badge badge-basic">🟢 Básico</span></h2>
                 <div class="card">
                     <table class="comparison-table">
                         <thead>
@@ -615,7 +718,7 @@
                         <tbody>
                             <tr>
                                 <td><strong>Pre-Hepática</strong> (Hemólisis)</td>
-                                <td>Orina clara, Anemia.</td>
+                                <td>Orina clara, Anemia. (Bilirrubina Indirecta).</td>
                             </tr>
                             <tr>
                                 <td><strong>Hepática</strong> (Hepatitis)</td>
@@ -623,17 +726,36 @@
                             </tr>
                             <tr>
                                 <td><strong>Post-Hepática</strong> (Obstrucción)</td>
-                                <td><strong>Coluria + Acolia</strong>.</td>
+                                <td><strong>Coluria + Acolia</strong>. (Bilirrubina Directa).</td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cierre del Caso 5</h2>
+                <div class="summary-container">
+                    <div class="pearl-box">
+                        <span class="box-title">💎 Perla Clínica</span>
+                        <ul>
+                            <li>Coluria = Bilirrubina Directa (la única que se filtra por riñón).</li>
+                            <li>Ictericia indolora + vesícula palpable = Cáncer (Ley Courvoisier-Terrier).</li>
+                        </ul>
+                    </div>
+                    <div class="error-box">
+                        <span class="box-title">☠️ Error Mortal</span>
+                        <ul>
+                            <li>Pensar que si orina claro no tiene nada (puede ser Hemólisis).</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </section>
 
         <section>
             <section>
-                <h2>Caso 6: Síndrome Asténico + Palidez</h2>
+                <h2>Caso 6: Síndrome Asténico</h2>
                 <div class="card">
                     <ul>
                         <li><strong>Paciente:</strong> Mujer, 32 años (Vegetariana, Hipermenorrea).</li>
@@ -647,7 +769,9 @@
                         <li><strong>Piel/Faneras:</strong> Caída cabello, uñas frágiles, Pica (hielo).</li>
                     </ul>
                 </div>
-                <p style="font-size:0.7em; text-align:center;"><em>*En hombres o mujeres post-menopáusicas, SIEMPRE descartar sangrado digestivo.</em></p>
+                <div class="highlight-box important" style="text-align:center; font-size:0.9em;">
+                    ⚠ <strong>ALERTA ROJA:</strong> En hombres o mujeres post-menopáusicas, anemia ferropénica es <strong>CÁNCER DE COLON</strong> hasta que se demuestre lo contrario. (Buscar sangrado digestivo).
+                </div>
             </section>
 
             <section>
@@ -680,7 +804,7 @@
             </section>
 
             <section>
-                <h2>Clasificación (VCM)</h2>
+                <h2>Clasificación (VCM) <span class="badge badge-basic">🟢 Básico</span></h2>
                 <div class="card">
                     <table class="comparison-table">
                         <thead>
@@ -694,7 +818,7 @@
                             <tr>
                                 <td><strong>Bajo (< 80)</strong></td>
                                 <td class="important">Microcítica</td>
-                                <td>Falta de Hierro.</td>
+                                <td>Falta de Hierro (Ferropenia).</td>
                             </tr>
                             <tr>
                                 <td><strong>Normal</strong></td>
@@ -710,11 +834,31 @@
                     </table>
                 </div>
             </section>
+
+            <section>
+                <h2>Cierre del Caso 6</h2>
+                <div class="summary-container">
+                    <div class="pearl-box">
+                        <span class="box-title">💎 Perla Clínica</span>
+                        <ul>
+                            <li>Mujer joven + Microcitosis = Ferropenia (Menstruación/Dieta).</li>
+                            <li>La Ferritina es el mejor marcador de depósito de hierro.</li>
+                        </ul>
+                    </div>
+                    <div class="error-box">
+                        <span class="box-title">☠️ Error Mortal</span>
+                        <ul>
+                            <li>Confiar en el Hto/Hb ante un sangrado agudo (tarda en bajar).</li>
+                            <li>No pedir colonoscopía en un anciano con anemia ferropénica.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <section>
             <section>
-                <h2>Caso 7: "El primer dia de Crossfit"</h2>
+                <h2>Caso 7: "El Gymbro Roto"</h2>
                 <div class="card">
                     <ul>
                         <li><strong>Paciente:</strong> Varón, 28 años.</li>
@@ -783,8 +927,29 @@
                     <strong>Diagnóstico:</strong> Rabdomiólisis con Injuria Renal Aguda.
                 </div>
             </section>
+
+            <section>
+                <h2>Cierre del Caso 7</h2>
+                <div class="summary-container">
+                    <div class="pearl-box">
+                        <span class="box-title">💎 Perla Clínica</span>
+                        <ul>
+                            <li>Tira (+) y Sedimento (-) = Mioglobina (Rabdomiólisis).</li>
+                            <li>La CPK es el gold standard diagnóstico.</li>
+                        </ul>
+                    </div>
+                    <div class="error-box">
+                        <span class="box-title">☠️ Error Mortal</span>
+                        <ul>
+                            <li>Dar Calcio para corregir la hipocalcemia inicial (empeora el daño muscular).</li>
+                            <li>No hidratar agresivamente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </section>
-<section data-background-color="#2c3e50">
+
+        <section data-background-color="#2c3e50">
             <h2 style="color:#f1c40f; border-bottom: none;">Para llevar a casa...</h2>
             <div class="card" style="margin-top: 30px;">
                 <ol style="font-size: 1.1em; line-height: 1.8;">
@@ -803,10 +968,6 @@
                 </ol>
             </div>
         </section>
-        <section data-background-color="#2c3e50">
-            <h1 style="color:white;">¡Muchas Gracias!</h1>
-            <h3 style="color:#3498db;">¿Dudas o Preguntas?</h3>
-        </section>
 
     </div>
 </div>
@@ -823,6 +984,5 @@
     });
 </script>
 </body>
-
 </html>
-
+```
